@@ -1,0 +1,50 @@
+# THIS IS EMULATOR NAMESPACE ON PYTHON 
+from tkinter import *
+from tkinter import messagebox
+# формальность не гарантируется. Написал свое пространство имен. Изменяйте под ТЗ
+# https://github.com/VladDoctor/python_tutors
+while True:
+ root = Tk()
+ def nameadd(namespace):
+     '''
+      функция для добавления путей в пространстве или объектов пути
+      https://github.com/VladDoctor/python_tutors
+
+     '''
+     nameslist = []
+     return nameslist.append(namespace)
+ def command(arg):
+     '''
+       функция для определения пути и проверки. Так же замените объект
+       2-го уровня 'foo' на разные вариации(bar и тд) и проверку
+       со списком namelist
+       https://github.com/VladDoctor/python_tutors
+     '''
+     argg = arg.lower().split(' ')
+     create = ['create', 'foo', ''.join(argg[-1:])]
+     add = ['add', 'foo', ''.join(argg[-1:])]
+     get = ['get', 'foo', ''.join(argg[-1:])]
+     if argg == create:
+         nameadd(''.join(argg)[-1:])
+         print('created!')
+     elif argg == add:
+        print('added!')
+     elif argg == get:
+         i = ''.join(argg[-1:])
+         if i in nameslist: # тут ошибка, я понимаю в чем она, но, чтобы было по-честному, исправьте сами 
+            print('foo')
+     else:
+         messagebox.showerror("Ошибка", "None <namespace> OR <var>") #люблю Ткинтер. Не нужен? Замените на print
+         
+
+ a = input('Введите команду: ')
+ if(a == 'close'):
+     break
+ else:
+     command(a)
+
+print('closed')
+root.mainloop()
+
+# права защищены * Влад Ефименко
+# https://github.com/VladDoctor/python_tutors
