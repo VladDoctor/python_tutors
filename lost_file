@@ -1,0 +1,15 @@
+#LOSTelem
+import glob
+path = r'C:\Users\RGB_Boss\Desktop\Project' #PathForYourRepository(with num.(r))
+
+def hiderL(res):
+    new_res = []
+    [new_res.append(int(i.split('.')[0])) for i in res]
+    nr = []
+    [nr.append(i) for i in range(new_res[-1] + 1) if not i == 0]
+    result = set(nr) - set(new_res)
+    return list(result)
+
+print(hiderL(glob.glob1(path, '*.txt')))
+#THIS IS NOT PROMLEM ALGORITHM, BUT HE IS VERY OPTIMIZED
+#VLAD EFIMENKO 
